@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Чики Брики в Дамки</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>-->
+    <link rel="stylesheet" href="public/style.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC8aqTI-rC4nzZfR5qx2QHIXCAmN5FMREM&callback=initMap"></script>
+
+</head>
+<body>
+<div class="dws-wrapper">
+    <div class="dws-form">
+        <h1>Выберите способ доставки</h1>
+
+        <ul class="tab__list">
+            <li class="tab__elem tab__elem-active" data-tab="1">
+                Доставка
+            </li>
+            <li class="tab__elem" data-tab="2">
+                Самовывоз
+            </li>
+        </ul>
+
+        <div id="tab__container">
+            <div class="tab-form active" id="tab-1">
+                <label class="line">
+                    ФИО
+                    <input class="tel" id="name" type="text" placeholder="Только кириллица">
+                    <span class="alert fa fa-exclamation-circle">Допустима только кириллица!</span>
+                </label>
+
+                <label class="line">
+                    Телефон
+                    <input id="phone" class="tel lefon" type="tel" placeholder="+7 (___)___-__-__">
+                </label>
+                <label>
+                    <span class="deliver">Адрес доставки</span>
+                    <input class="text" type="text" placeholder="Город, улица, дом">
+                </label>
+                <label>
+                    Комментарий
+                    <input class="text comment" type="text">
+                </label>
+                <button  type="reset" onclick="isChecking()">Оформить заказ</button>
+            </div>
+
+            <div class="tab-form" id="tab-2">
+                <div class="address">
+                    <input type="radio" class="radio" name="radioButton" id="chkbx-1">
+                    <label for="chkbx-1">Зеленоград, корпус 854</label>
+
+                    <input type="radio" class="radio" name="radioButton" id="chkbx-2">
+                    <label for="chkbx-2">Зеленоград, корпус 900</label>
+                </div>
+                <div id="map">
+
+                </div>
+                <button type="reset">Оформить заказ</button>
+            </div>
+        </div>
+
+
+        <div class="tab-form">
+            <p>test</p>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="public/main.js"></script>
+</body>
+</html>

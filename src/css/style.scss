@@ -1,0 +1,301 @@
+@import "mixins";
+@import "variables";
+
+body {
+  background: #E5E5E5;
+  font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+  margin-bottom: 40px;
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media (max-width: 600px) {
+  .tabs {
+    flex-direction: column;
+  }
+
+  .tabs li {
+    width: 100%;
+  }
+
+  .tabs li:not(:last-child) {
+    margin-right: 0;
+  }
+
+  .tabs li a {
+    border-radius: 0;
+    opacity: 1;
+    top: 0;
+  }
+
+  .tabs li.active a::before {
+    content: '•';
+    padding-right: 5px;
+  }
+
+  .tabs-content {
+    border-radius: 0;
+  }
+}
+
+.tabs li {
+  width: 100%;
+}
+
+.tabs li:not(:last-child) {
+  margin-right: 0;
+}
+
+.tabs li a {
+  border-radius: 0;
+  opacity: 1;
+  top: 0;
+}
+
+.tabs li.active a::before {
+  content: '•';
+  padding-right: 5px;
+}
+
+.tabs-content {
+  border-radius: 0;
+}
+
+.dws {
+  &-wrapper {
+    display: flex;
+    //height: 100vh;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &-form {
+    background: #F6F6F6;
+    padding: 30px 85px;
+    width: 1000px;
+
+    & input {
+      box-sizing: border-box;
+      display: block;
+      margin-top: 10px;
+      padding: 10px;
+      border-radius: 4px;
+      border: 1px solid #999999;
+      outline: none;
+    }
+  }
+}
+
+
+input.comment {
+  padding-bottom: 60px;
+}
+
+input:focus {
+  border: 1px solid #222222;
+}
+
+.tab-form label {
+  margin-left: 4%;
+  margin-right: 2%
+}
+
+.line {
+  display: inline-block;
+  width: 45%;
+  float: left;
+  margin-top: 30px;
+}
+
+.line:nth-child(2) {
+  margin-left: 0;
+}
+
+.tel {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.text {
+  width: 92%;
+  margin-bottom: 30px;
+  margin-left: 4%;
+  margin-right: 2%
+}
+
+.tab-form {
+  background: white;
+  padding-bottom: 60px;
+  display: none;
+}
+
+.tab-form.active {
+  display: block;
+}
+
+label {
+  font-size: 12px;
+}
+
+label.tab {
+  margin-bottom: -1px;
+  margin-right: 5px;
+  display: inline-block;
+  padding: 15px 30px;
+  font-weight: normal;
+  font-style: normal;
+  background: $tabColor;
+  color: $tabColorFont;
+  border-radius: 5px 5px 0 0;
+  font-size: 16px;
+
+  &.active {
+    background: white;
+    color: #215BF0;
+  }
+}
+
+.tab {
+  &__list {
+    display: flex;
+    justify-content: left;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__elem {
+    padding: 15px 30px;
+    background-color: $tabColor;
+    color: $tabColorFont;
+    border-radius: 5px 5px 0 0;
+    font-size: $tabFontSize;
+    list-style: none;
+    cursor: pointer;
+
+    &-active {
+      background: $tabActive;
+      color: $mainColor;
+    }
+  }
+}
+
+
+.address {
+  display: inline-block;
+  width: 100%
+}
+
+.address label {
+  display: block;
+  position: relative;
+}
+
+.address label:hover {
+  cursor: pointer;
+  color: #215BF0;
+}
+
+/* тут вот скрыт текст алерта*/
+
+.alert.fa.fa-exclamation-circle {
+  margin-top: -30px;
+  color: red;
+  text-decoration: none;
+  display: none;
+  font-size: 15px;
+
+}
+
+button {
+  float: right;
+  background: #215BF0;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 80px;
+  text-decoration: none;
+  box-shadow: none;
+  border-width: 0;
+  margin-right: 4%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-size: 16px;
+  outline: none;
+}
+
+button:hover {
+  cursor: pointer;
+  background: #0F41C4;
+}
+
+button:focus {
+  background: #EDEEEF;
+  color: grey;
+}
+
+
+#map {
+  width: 80%;
+  margin: 30px 30px 30px 100px;
+  height: 400px;
+}
+
+
+.radio {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  margin: 10px 0 0 7px;
+}
+
+.address#chkbx-2 + label {
+  float: right;
+  margin-top: 0;
+  position: relative;
+}
+
+.radio + label {
+  display: inline-block;
+  position: relative;
+  margin-top: 30px;
+  margin-left: 30px;
+  padding: 0 0 0 35px;
+  cursor: pointer;
+}
+
+.radio + label:before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  border: 1px solid black;
+  border-radius: 50%;
+  background: #FFF;
+}
+
+.radio + label:after {
+  content: '';
+  position: absolute;
+  top: 1px;
+  left: 4px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: black;
+  opacity: 0;
+  transition: .2s;
+}
+
+.radio:checked + label:after {
+  opacity: 1;
+}
+
+
+.del {
+  display: none;
+}
