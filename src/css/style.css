@@ -217,6 +217,10 @@ button:focus {
   color: grey;
 }
 
+.text_error {
+  border: 1px solid #FF0000;
+}
+
 #map {
   width: 80%;
   margin: 30px 30px 30px 100px;

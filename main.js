@@ -20,23 +20,30 @@ $(document).ready(function () {
 
 });
 
-function isMessage() {
-        let name = document.getElementById("name").value;
-        let re = /^[А-Яа-яЁё\s-]+$/i;
-        if (re.test(name)) status.innerHTML = true;
-        else document.querySelector("#alert").style.display = "block";
-}
-
-
-ymaps.ready()
-    .done(function (ym) {
-        let myMap = new ym.Map('map', {
-            center: [55.751574, 37.573856],
-            zoom: 10
-        }, {
-            searchControlProvider: 'yandex#search'
-        })
+$(function() {
+    $(function($) {
+        $('#name').on('keypress', function() {
+            let that = this;
+            setTimeout(function() {
+                let res = /[^а-яА-ЯёЁ ]/g.exec(that.value);
+                that.value = that.value.replace(res, '');
+            }, 0);
+        });
     });
+});
+
+
+
+
+ymaps
+    .load()
+    .then(maps => {
+        const map = new maps.Map('map', {
+            center: [-8.369326, 115.166023],
+            zoom: 7
+        });
+    });
+
 /*
 ymaps.ready(initMap);
 

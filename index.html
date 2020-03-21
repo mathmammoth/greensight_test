@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="public/style.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script async defer src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;coordorder=longlat&amp;apikey=9c4bb7e6-e267-4b3b-9f57-b8c8f90b00fc"></script>
-    <script src="public/main.js"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;coordorder=longlat&amp;apikey=9c4bb7e6-e267-4b3b-9f57-b8c8f90b00fc" type="text/javascript"></script>
+
 </head>
 <body>
 <div class="dws-wrapper">
@@ -29,30 +29,32 @@
         </ul>
 
         <div id="tab__container">
+            <form>
             <div class="tab-form active" id="tab-1">
                 <label class="line">
                     ФИО
-                    <input class="tel" id="name" type="text" placeholder="Только кириллица">
+                    <input class="tel" id="name" type="text" name="Name" placeholder="Только кириллица" required>
                     <span class="alert fa fa-exclamation-circle" id="alert">Допустима только кириллица!</span>
                 </label>
 
                 <label class="line">
                     Телефон
-                    <input id="phone" class="tel lefon" type="tel" placeholder="+7 (___)___-__-__">
+                    <input id="phone" class="tel lefon" type="tel" placeholder="+7 (___)___-__-__" required>
                 </label>
                 <label>
                     <span class="deliver">Адрес доставки</span>
-                    <input class="text" type="text" placeholder="Город, улица, дом">
+                    <input class="text" type="text" placeholder="Город, улица, дом" required>
                 </label>
                 <label>
                     Комментарий
-                    <input class="text comment" type="text">
+                    <input class="text comment" type="text" required>
                 </label>
-                <button  type="reset" onclick="function isMessage() {
+                <button  type="submit" onclick="function isMessage() {
 
                 }
                 isMessage()">Оформить заказ</button>
             </div>
+            </form>
 
             <div class="tab-form" id="tab-2">
                 <div class="address">
@@ -71,19 +73,10 @@
             <div class="tab-form" id="tab-3">
                 <ul>
                     <li>
-                        карту
-                    </li>
-                    <li>
                         убрать скролл
                     </li>
                     <li>
-                        проверку кириллицы
-                    </li>
-                    <li>
                         масштабирование карты по меткам
-                    </li>
-                    <li>
-                        сделать все поля обязательными
                     </li>
                 </ul>
             </div>
@@ -97,7 +90,7 @@
     </div>
 
 </div>
-
+    <script src="public/main.js"></script>
 
 </body>
 </html>
