@@ -8,22 +8,23 @@ h1 {
   font-weight: normal;
   font-style: normal; }
 
-@media (max-width: 600px) {
-  .tabs {
-    flex-direction: column; }
-  .tabs li {
-    width: 100%; }
-  .tabs li:not(:last-child) {
-    margin-right: 0; }
-  .tabs li a {
-    border-radius: 0;
-    opacity: 1;
-    top: 0; }
-  .tabs li.active a::before {
-    content: '\2022';
-    padding-right: 5px; }
-  .tabs-content {
-    border-radius: 0; } }
+.tabs li {
+  width: 100%; }
+
+.tabs li:not(:last-child) {
+  margin-right: 0; }
+
+.tabs li a {
+  border-radius: 0;
+  opacity: 1;
+  top: 0; }
+
+.tabs li.active a::before {
+  content: '\2022';
+  padding-right: 5px; }
+
+.tabs-content {
+  border-radius: 0; }
 
 .tabs li {
   width: 100%; }
@@ -147,11 +148,13 @@ label.tab {
   color: #215BF0; }
 
 /* тут вот скрыт текст алерта*/
+#alert {
+  display: none; }
+
 .alert.fa.fa-exclamation-circle {
   margin-top: -30px;
   color: red;
   text-decoration: none;
-  display: none;
   font-size: 15px; }
 
 button {
@@ -192,7 +195,8 @@ button:focus {
 .address#chkbx-2 + label {
   float: right;
   margin-top: 0;
-  position: relative; }
+  position: relative;
+  justify-content: space-between; }
 
 .radio + label {
   display: inline-block;
@@ -230,3 +234,15 @@ button:focus {
 
 .del {
   display: none; }
+
+@media screen and (max-width: 500px) {
+  button {
+    margin-right: 18%; }
+  #map {
+    height: 300px;
+    margin-left: 10%;
+    position: relative; } }
+
+@media screen and (max-width: 680px) {
+  #map {
+    margin-left: 5%; } }

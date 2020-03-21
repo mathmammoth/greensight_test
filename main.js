@@ -1,6 +1,6 @@
-
 import $ from "jquery";
 import "jquery.maskedinput/src/jquery.maskedinput";
+import ymaps from 'ymaps';
 
 
 
@@ -16,56 +16,70 @@ $(document).ready(function () {
 
     $("#phone").mask("+7 (999) 999-99-99");
 
-    initMap();
 
 
 });
 
-function initMap() {
-    let element = document.getElementById('map');
-    let icon = ('src/img/placeholder.png');
-    let options = {
-        zoom: 15,
-        center: {lat: 55.9791177, lng: 37.1833553},
-    };
-
-    let map = new google.maps.Map(element, options);
-
-    let markers = [
-        {
-            coordinates: {lat: 55.9791177, lng: 37.1833553},
-            image: icon
-        },
-
-        {
-            coordinates: {lat: 55.9811233, lng: 37.1829328},
-            image: icon
-        }
-    ];
-
-    for(let i=0; i < markers.length; i++)
-    {
-        addMarker(markers[i]);
-    }
-
-    function addMarker(properties) {
-        let marker = new google.maps.Marker({
-            position: properties.coordinates,
-            map: map,
-            icon: properties.image,
-        });
-    }
-
-    $(".radio").click(function () {
-
-        console.log(1);
-        $(element).find(markers).remove(icon);
-        console.log(2)
-        $(this).add(icon);
-        console.log(3)
-    });
+function isMessage() {
+        let name = document.getElementById("name").value;
+        let re = /^[А-Яа-яЁё\s-]+$/i;
+        if (re.test(name)) status.innerHTML = true;
+        else document.querySelector("#alert").style.display = "block";
 }
 
 
+ymaps.ready()
+    .done(function (ym) {
+        let myMap = new ym.Map('map', {
+            center: [55.751574, 37.573856],
+            zoom: 10
+        }, {
+            searchControlProvider: 'yandex#search'
+        })
+    });
+/*
+ymaps.ready(initMap);
 
+function initMap() {
+    let map = new ymaps.Map('map', {
+        center: [59.94, 30.32],
+        zoom: 12,
+        controls: ['zoomControl']
+        });
+    let placemark = new ymaps.Placemark([59.97, 30.31], {
 
+    });
+
+    map.geoObjects.add(placemark);
+
+} */
+
+/* $(function () {
+    var myGeoObjects = [],
+        coords = [
+            [56.023, 36.988],
+            [56.025, 36.981],
+            [56.020, 36.981],
+            [56.021, 36.983],
+            [56.027, 36.987]
+        ],
+        myMap,
+        myClusterer;
+
+    ymaps.ready(function () {
+        myMap = new ymaps.Map('map', {
+            center: [55.76, 37.64],
+            zoom: 7
+        });
+        myClusterer = new ymaps.Clusterer();
+
+        for (var i = 0; i < coords.length; i++) {
+            myGeoObjects[i] = new ymaps.Placemark(
+                coords[i]
+            );
+        }
+
+        myClusterer.add(myGeoObjects);
+        myMap.geoObjects.add(myClusterer);
+    });
+}); */

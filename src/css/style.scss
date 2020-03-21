@@ -12,11 +12,6 @@ h1 {
   font-style: normal;
 }
 
-@media (max-width: 600px) {
-  .tabs {
-    flex-direction: column;
-  }
-
   .tabs li {
     width: 100%;
   }
@@ -39,7 +34,7 @@ h1 {
   .tabs-content {
     border-radius: 0;
   }
-}
+
 
 .tabs li {
   width: 100%;
@@ -200,11 +195,14 @@ label.tab {
 
 /* тут вот скрыт текст алерта*/
 
+#alert {
+  display: none;
+}
+
 .alert.fa.fa-exclamation-circle {
   margin-top: -30px;
   color: red;
   text-decoration: none;
-  display: none;
   font-size: 15px;
 
 }
@@ -255,6 +253,7 @@ button:focus {
   float: right;
   margin-top: 0;
   position: relative;
+  justify-content: space-between;
 }
 
 .radio + label {
@@ -298,4 +297,21 @@ button:focus {
 
 .del {
   display: none;
+}
+
+@media screen and (max-width: 500px) {
+  button {
+    margin-right: 18%;
+  }
+  #map {
+    height: 300px;
+    margin-left: 10%;
+    position: relative;
+  }
+}
+
+@media screen and (max-width: 680px){
+  #map {
+    margin-left: 5%;
+  }
 }

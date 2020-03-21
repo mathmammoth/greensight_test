@@ -11,7 +11,8 @@
   "dependencies": {
     "jquery": "^3.4.1",
     "jquery.maskedinput": "^1.4.1",
-    "load-google-maps-api": "^2.0.2"
+    "load-google-maps-api": "^2.0.2",
+    "ymaps": "^0.2.1"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
