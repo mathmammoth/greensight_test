@@ -131,28 +131,6 @@ input:focus {
   display: block;
 }
 
-label {
-  font-size: 12px;
-}
-
-label.tab {
-  margin-bottom: -1px;
-  margin-right: 5px;
-  display: inline-block;
-  padding: 15px 30px;
-  font-weight: normal;
-  font-style: normal;
-  background: $tabColor;
-  color: $tabColorFont;
-  border-radius: 5px 5px 0 0;
-  font-size: 16px;
-
-  &.active {
-    background: white;
-    color: #215BF0;
-  }
-}
-
 .tab {
   &__list {
     display: flex;

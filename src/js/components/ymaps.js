@@ -40,6 +40,7 @@ ymaps
             map.geoObjects.add(placemark);
             map.setBounds(map.geoObjects.getBounds(), {checkZoomRange:true}).then(function(){
                 if(map.getZoom() < 1) map.setZoom(11);
+
             });
         });
     });
