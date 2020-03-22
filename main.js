@@ -26,7 +26,13 @@ $(function() {
             let that = this;
             setTimeout(function() {
                 let res = /[^а-яА-ЯёЁ ]/g.exec(that.value);
+                let alertDiv = $("#alert");
                 that.value = that.value.replace(res, '');
+                if (res !== null) {
+                    alertDiv.css("display", "block");
+                } else {
+                    alertDiv.css("display", "none");
+                }
             }, 0);
         });
     });

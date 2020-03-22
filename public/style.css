@@ -99,24 +99,6 @@ input:focus {
 .tab-form.active {
   display: block; }
 
-label {
-  font-size: 12px; }
-
-label.tab {
-  margin-bottom: -1px;
-  margin-right: 5px;
-  display: inline-block;
-  padding: 15px 30px;
-  font-weight: normal;
-  font-style: normal;
-  background: #EDEEEF;
-  color: #a8a8a8;
-  border-radius: 5px 5px 0 0;
-  font-size: 16px; }
-  label.tab.active {
-    background: white;
-    color: #215BF0; }
-
 .tab__list {
   display: flex;
   justify-content: left;
@@ -136,8 +118,12 @@ label.tab {
     color: #215BF0; }
 
 .address {
-  display: inline-block;
+  display: flex;
+  justify-content: space-around;
   width: 100%; }
+  @media (max-width: 760px) {
+    .address {
+      flex-direction: column; } }
 
 .address label {
   display: block;
