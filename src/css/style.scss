@@ -234,9 +234,6 @@ button:focus {
   color: grey;
 }
 
-.text_error {
-  border: 1px solid #FF0000;
-}
 
 #map {
   width: 80%;
@@ -273,8 +270,8 @@ button:focus {
   position: absolute;
   top: -3px;
   left: 0;
-  width: 14px;
-  height: 14px;
+  width: 15px;
+  height: 15px;
   border: 1px solid black;
   border-radius: 50%;
   background: #FFF;

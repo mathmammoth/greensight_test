@@ -1,6 +1,6 @@
 import $ from "jquery";
 import "jquery.maskedinput/src/jquery.maskedinput";
-import ymaps from 'ymaps';
+import './src/js/components/ymaps'
 
 
 
@@ -33,60 +33,3 @@ $(function() {
 });
 
 
-
-
-ymaps
-    .load()
-    .then(maps => {
-        const map = new maps.Map('map', {
-            center: [-8.369326, 115.166023],
-            zoom: 7
-        });
-    });
-
-/*
-ymaps.ready(initMap);
-
-function initMap() {
-    let map = new ymaps.Map('map', {
-        center: [59.94, 30.32],
-        zoom: 12,
-        controls: ['zoomControl']
-        });
-    let placemark = new ymaps.Placemark([59.97, 30.31], {
-
-    });
-
-    map.geoObjects.add(placemark);
-
-} */
-
-/* $(function () {
-    var myGeoObjects = [],
-        coords = [
-            [56.023, 36.988],
-            [56.025, 36.981],
-            [56.020, 36.981],
-            [56.021, 36.983],
-            [56.027, 36.987]
-        ],
-        myMap,
-        myClusterer;
-
-    ymaps.ready(function () {
-        myMap = new ymaps.Map('map', {
-            center: [55.76, 37.64],
-            zoom: 7
-        });
-        myClusterer = new ymaps.Clusterer();
-
-        for (var i = 0; i < coords.length; i++) {
-            myGeoObjects[i] = new ymaps.Placemark(
-                coords[i]
-            );
-        }
-
-        myClusterer.add(myGeoObjects);
-        myMap.geoObjects.add(myClusterer);
-    });
-}); */
