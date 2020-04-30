@@ -9,7 +9,7 @@
     "production": "npm run prod"
   },
   "dependencies": {
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "jquery.maskedinput": "^1.4.1",
     "ymaps": "^0.2.1"
   },
